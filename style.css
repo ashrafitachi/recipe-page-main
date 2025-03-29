@@ -59,7 +59,7 @@ body{
 .recipe-page{
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 25px;
     border-radius: 14px;
     
 
@@ -69,8 +69,6 @@ body{
   background-color: var(--White);
    
 }
-
-
 
 .ingredients, .instructions {
     border-bottom: 1px solid #ddd ;
