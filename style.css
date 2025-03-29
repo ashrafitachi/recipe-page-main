@@ -55,21 +55,22 @@ body{
     
 }
 
+
 .recipe-page{
     display: flex;
     flex-direction: column;
-    padding: 16px;
+    padding: 20px;
     border-radius: 14px;
     
 
 
-  height: 1446;
+  height: 1446px;
   width: 400px;
   background-color: var(--White);
- 
-
-  
+   
 }
+
+
 
 .ingredients, .instructions {
     border-bottom: 1px solid #ddd ;
@@ -119,5 +120,3 @@ td{
     text-align: left;
     font-weight: bold;
 }
-
-
