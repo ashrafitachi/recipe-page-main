@@ -1,120 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+:root {
+  --White: hsl(0, 0%, 100%);
 
-:root{
+  --Stone-100: hsl(30, 54%, 90%);
+  --Stone-150: hsl(30, 18%, 87%);
+  --Stone-600: hsl(30, 10%, 34%);
+  --Stone-900: hsl(24, 5%, 18%);
 
---White: hsl(0, 0%, 100%);
+  --Brown-800: hsl(14, 45%, 36%);
 
---Stone-100: hsl(30, 54%, 90%);
---Stone-150: hsl(30, 18%, 87%);
---Stone-600: hsl(30, 10%, 34%);
---Stone-900: hsl(24, 5%, 18%);
+  --Rose-800: hsl(332, 51%, 32%);
+  --Rose-50: hsl(330, 100%, 98%);
 
---Brown-800: hsl(14, 45%, 36%);
-
---Rose-800: hsl(332, 51%, 32%);
---Rose-50: hsl(330, 100%, 98%);
-
---Outfit: 'Outfit' ;
---Young-serif: 'Young-serif' ;
+  --Outfit: "Outfit";
+  --Young-serif: "Young-serif";
 }
 
 @font-face {
-    font-family: Outfit ;
-    src: url("./assets/fonts/outfit/Outfit-VariableFont_wght.ttf");
+  font-family: Outfit;
+  src: url("./assets/fonts/outfit/Outfit-VariableFont_wght.ttf");
 }
 
 @font-face {
-    font-family: Young-serif ;
-    src: url("./assets/fonts/young-serif/YoungSerif-Regular.ttf");
+  font-family: Young-serif;
+  src: url("./assets/fonts/young-serif/YoungSerif-Regular.ttf");
 }
 
-h1, h2{
-    font-family: var(--Young-serif);
-    
+h1,
+h2 {
+  font-family: var(--Young-serif);
 }
 
-p, li, th, td, h3{
-    font-family: var(--Outfit);
+p,
+li,
+th,
+td,
+h3 {
+  font-family: var(--Outfit);
 }
 
-h2, td{
-    color: var(--Brown-800);
+h2,
+td {
+  color: var(--Brown-800);
 }
 
-h2{
-    font-weight: 500;
+h2 {
+  font-weight: 500;
 }
 
-h3{
-    color: var(--Rose-800);
+h3 {
+  color: var(--Rose-800);
 }
 
-body{
-    display: flex;
-    justify-content: center;
-    background-color: var(--Stone-100);
-    
+body {
+  display: flex;
+  justify-content: center;
+  background-color: var(--Stone-100);
 }
 
-
-.recipe-page{
-    display: flex;
-    flex-direction: column;
-    padding: 25px;
-    border-radius: 14px;
-    
-
-
-  height: 1446px;
-  width: 400px;
+.recipe-page {
+  padding: 25px;
+  border-radius: 14px;
+  margin: 120px auto;
+  max-width: 750px;
+  width: 100%;
   background-color: var(--White);
-   
+}
+.preparation-time h3 {
+  margin-bottom: 10px;
+}
+.recipe-page .preparation-time {
+  margin: 20px 0;
+}
+.recipe-page .preparation-time ul li,
+.recipe-page .ingredients ul li {
+  position: relative;
+  margin-left: 40px;
+  margin-bottom: 5px;
+}
+.recipe-page .preparation-time ul li::before,
+.recipe-page .ingredients ul li::before {
+  content: "●";
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  color: var(--Rose-800);
+}
+.recipe-page .instructions {
+  margin: 20px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--Stone-150);
+}
+.recipe-page .instructions ol li {
+  margin-bottom: 5px;
+  line-height: 1.5;
+  position: relative;
+  color: var(--Stone-600);
+  counter-increment: counter;
+  margin-left: 30px;
+}
+.recipe-page .instructions ol li::before {
+  content: counter(counter) ". ";
+  position: absolute;
+  left: -30px;
+  font-weight: bold;
+  color: var(--Brown-800);
 }
 
-.ingredients, .instructions {
-    border-bottom: 1px solid #ddd ;
+img {
+  max-width: 100%;
+  border-radius: 10px;
 }
 
-img{
-    width: 375px;
-    border-radius: 10px;
-
-    position: relative;
-    left: 13px;
+.preparation-time {
+  background-color: var(--Rose-50);
+  padding: 16px;
+  border-radius: 10px;
 }
 
-.preparation-time{
-   width: 90%;
-   background-color: var(--Rose-50);
-   padding: 16px;
-   box-sizing: border-box;
-   border-radius: 10px;
+.recipe-page h1:first-of-type {
+  margin: 20px 0;
+}
+.recipe-page p.recipe-overview {
+  line-height: 1.7;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-table{
-    width: 100%;
-    border-collapse: collapse;
-
+tr {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
 }
 
-tr{
-    border-bottom: 1px solid #ddd ;
-    padding: 10px;
-   
+tr:last-child {
+  border-bottom: none;
 }
 
-tr:last-child{
-    border-bottom: none;
+th {
+  text-align: left;
+  font-weight: 350;
+
+  position: relative;
+  left: 20px;
 }
 
-th{
-    text-align: left;
-    font-weight: 350;
-
-    position: relative;
-    left: 20px;
+td {
+  text-align: left;
+  font-weight: bold;
+  padding: 20px 0;
 }
-
-td{
-    text-align: left;
-    font-weight: bold;
+@media (max-width: 585px) {
+  .recipe-page {
+    margin: 0;
+    padding: 0;
+  }
+  .holder {
+    padding: 0 15px;
+  }
+  .recipe-page img {
+    border-radius: 0;
+  }
 }
